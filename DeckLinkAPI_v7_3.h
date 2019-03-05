@@ -32,7 +32,6 @@
 
 #include "DeckLinkAPI.h"
 #include "DeckLinkAPI_v7_6.h"
-#include "DeckLinkAPI_v10_11.h"
 
 /* Interface ID Declarations */
 
@@ -57,7 +56,7 @@ class IDeckLinkVideoInputFrame_v7_3;
 class BMD_PUBLIC IDeckLinkOutput_v7_3 : public IUnknown
 {
 public:
-	virtual HRESULT DoesSupportVideoMode (BMDDisplayMode displayMode, BMDPixelFormat pixelFormat, /* out */ BMDDisplayModeSupport_v10_11 *result) = 0;
+    virtual HRESULT DoesSupportVideoMode (BMDDisplayMode displayMode, BMDPixelFormat pixelFormat, /* out */ BMDDisplayModeSupport *result) = 0;
     virtual HRESULT GetDisplayModeIterator (/* out */ IDeckLinkDisplayModeIterator_v7_6 **iterator) = 0;
 
     virtual HRESULT SetScreenPreviewCallback (/* in */ IDeckLinkScreenPreviewCallback *previewCallback) = 0;
@@ -126,7 +125,7 @@ protected:
 class BMD_PUBLIC IDeckLinkInput_v7_3 : public IUnknown
 {
 public:
-	virtual HRESULT DoesSupportVideoMode (BMDDisplayMode displayMode, BMDPixelFormat pixelFormat, /* out */ BMDDisplayModeSupport_v10_11 *result) = 0;
+    virtual HRESULT DoesSupportVideoMode (BMDDisplayMode displayMode, BMDPixelFormat pixelFormat, /* out */ BMDDisplayModeSupport *result) = 0;
     virtual HRESULT GetDisplayModeIterator (/* out */ IDeckLinkDisplayModeIterator_v7_6 **iterator) = 0;
 
     virtual HRESULT SetScreenPreviewCallback (/* in */ IDeckLinkScreenPreviewCallback *previewCallback) = 0;
